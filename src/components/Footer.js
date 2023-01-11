@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkContext } from '../context/DarkContext';
 
-const Footer = ({isDark,setIsDark}) => {
+const Footer = () => {
+    const {isDark,setIsDark} = useContext(DarkContext)
     const darkToggle = ()=>{
         setIsDark(!isDark);
     }

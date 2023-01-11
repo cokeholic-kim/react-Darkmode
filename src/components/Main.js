@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkContext } from '../context/DarkContext';
 
-const Main = ({isDark}) => {
+const Main = () => {
+    const {isDark} = useContext(DarkContext)
     return (
         <div className='main' style={{
             backgroundColor: isDark? '#222':null,
