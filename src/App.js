@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Main from './components/Main';
+import { NameContext } from './context/NameContext';
 
 function App() {
+  const [isDark,setIsDark] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NameContext.Provider value="bbbbb">
+      <div className="App">
+        <Header isDark={isDark}/>
+        <Main isDark={isDark}/>
+        <Footer isDark={isDark} setIsDark={setIsDark}/>
+      </div>
+    </NameContext.Provider>
   );
 }
 
